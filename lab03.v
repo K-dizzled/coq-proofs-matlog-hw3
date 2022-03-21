@@ -27,7 +27,7 @@ end)
 
 (* Exercise 4: Prove weak form of Peirce's law holds in intuitionistic logic *)
 Check
-  (_)
+  (fun abaabb => abaabb (fun abaab => abaab (fun a => abaabb (fun ab => a))))
 : ((((A -> B) -> A) -> A) -> B) -> B.
 
 (* Exercise 5: We can always add double negation (but cannot drop it in general) *)
@@ -43,5 +43,5 @@ Check
 (* Exercise 7: Prove we cannot add the negation of the law of excluded middle and have a sound logic.
    Keep in mind that "~ A" means "A -> False" *)
 Check
-  (_)
-: ~ ~ (A \/ ~ A).
+  (fun a => a (or_intror (fun b => (a (or_introl b)))))
+: ~ ~ (A \/ ~ A). 
